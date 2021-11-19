@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Bluder Cake Video</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- incldue A-Frane -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+    <!-- inlcude ar.js for A-Frame -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <script src="script.js"></script>
+
+</head>
+
+<body style="margin: 0px; overflow: hidden;">
+    <a-scene embedded arjs='sourceType: webcam;' vr-ui-mode='enabled: false'>
+
+        <a-marker-camera
+        type='pattern'
+        url=''
+        look-controls-enabled="false"
+        cursor="rayOrigin: mouse"
+        ></a-marker-camera>
+
+        <a-assets>
+            <video
+            id="bluder-cake"
+            src=""></video>
+        </a-assets>
+
+        <a-entity id="video-player">
+            <a-video src="#bluder-cake"></a-video>
+            <a-entity id="controls">
+                <a-entity id="progress-bar">
+                    <a-entity id="timestamp"></a-entity>
+                </a-entity>
+                <a-entity id="buttons">
+                    <button id="play-pause"></button>
+                </a-entity>
+                <a-entity id="time">
+                    <span id="current">0:00</span> / <span id="duration">0:00</span>
+                </a-entity>
+            </a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
