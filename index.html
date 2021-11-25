@@ -21,14 +21,10 @@
 </head>
 
 <body style="margin: 0px; overflow: hidden;">
-    <a-scene embedded arjs='sourceType: webcam;' vr-ui-mode='enabled: false'>
+    <a-scene embedded arjs='sourceType: webcam;'>
 
-        <a-marker-camera
-        type='pattern'
-        url='/src/pattern-Skelchy.patt'
+        <a-marker-camera preset='hiro'
         ></a-marker-camera>
-
-        <a-entity camera></a-entity>
 
         <a-assets>
             <video
