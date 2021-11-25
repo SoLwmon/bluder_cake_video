@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width-device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>Bluder Cake Video</title>
-    <link rel="stylesheet" href="style.css">
+    <title>The Making of Bluder Cake</title>
 
     <!-- incldue A-Frane -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
@@ -47,7 +46,12 @@
         <script>
             window.addEventListener('click', function() {
                 var video = document.querySelector('#bluder-cake');
-                video.play();
+                if(video.paused) {
+                    video.play();
+                }
+                else {
+                    video.pause();
+                }
             });
         </script>
   
