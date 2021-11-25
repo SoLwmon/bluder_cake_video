@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Bluder Cake Video</title>
     <link rel="stylesheet" href="style.css">
 
@@ -23,10 +24,11 @@
     <a-scene embedded arjs='sourceType: webcam;' vr-ui-mode='enabled: false'>
 
         <a-marker-camera
-        type='pattern' url='/src/pattern-Skelchy.patt'
-        look-controls-enabled="false"
-        cursor="rayOrigin: mouse"
+        type='pattern'
+        url='/src/pattern-Skelchy.patt'
         ></a-marker-camera>
+
+        <a-entity camera></a-entity>
 
         <a-assets>
             <video
@@ -34,6 +36,8 @@
             src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164"
             autoplay
             loop="true"
+            webkit-playsinline
+            playsinline
             ></video>
             <img id="play" src="/src/play.png">
             <img id="pause" src="/src/pause.png">
