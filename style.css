@@ -17,7 +17,6 @@ body {
 .controls {
     width: 60%;
     display: flex;
-    position: relative;
     background: #333;
     color: #fff;
     border-bottom-left-radius: 10px;
@@ -42,4 +41,3 @@ body {
     font-weight: bold;
     margin-left: 10px;
 }
-
