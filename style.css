@@ -20,6 +20,7 @@ body {
 .controls {
     width: 60%;
     display: flex;
+    position: absolute;
     background: #333;
     color: #fff;
     border-bottom-left-radius: 10px;
