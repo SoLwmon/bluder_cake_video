@@ -1,4 +1,4 @@
-.container {
+body {
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -7,13 +7,8 @@
     height: 100vh;
 }
 
-.video-player {
-    width: 60%;
-}
-
 .video {
     width: 60%;
-    max-width: 800px;
     position: absolute;
     background-color: #000;
     border-top-left-radius: 10px;
@@ -47,4 +42,11 @@
     color: red;
     font-weight: bold;
     margin-left: 10px;
+}
+
+@media (max-width: 800px) {
+    .video,
+    .controls {
+        width: 90%;
+    }
 }
