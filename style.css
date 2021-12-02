@@ -11,7 +11,7 @@ body {
 .video {
     width: 60%;
     max-width: 800px;
-    position: relative;
+    position: absolute;
     background-color: #000;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -20,7 +20,7 @@ body {
 .controls {
     width: 60%;
     display: flex;
-    position: absolute;
+    position: relative;
     background: #333;
     color: #fff;
     border-bottom-left-radius: 10px;
