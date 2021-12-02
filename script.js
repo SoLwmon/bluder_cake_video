@@ -1,41 +1,25 @@
-var video = document.querySelector('.video');
-var bar = document.querySelector('.timestamp');
-var progress = document.querySelector('.timestamp');
-var btn = document.getElementById('play-pause');
-var currentTimeElement = document.querySelector('.current');
-var durationTimeElememnt = document.querySelector('.duration');
+var video = document.querySelector('video');
+var btn = document.getElementById('play');
+var progress = document.querySelector('timestamp');
+var currentTimeElement = document.querySelector('current');
+var durationTimeElememnt = document.querySelector('duration');
 
 //play & pause button
 function togglePlayPause() {
     if(video.paused) {
-        btn.className = 'pause';
+        btn.innerHTML = '<i class="fa fa-play"></i>';
         video.play();
     }
     else {
-        btn.className = 'play';
+        btn.innerHTML = '<i class="fa fa-pause"></i>';
         video.pause();
     }
 }
 
-btn.onclick = function() {
-    togglePlayPause();
+//Update progress
+function updateProgress() {
+    progress.value = (video.currentTime / video.duration) * 100;
 }
-
-//video progress bar
-video.addEventListener('timeupdate', function() {
-    var barPosition = video.currentTime / video.duration;
-    bar.style.width = barPosition * 100 + "%";
-
-    if(video.ended) {
-        btn.className = "play";
-    }
-})
-
-//interactive progress bar
-progress.addEventListener('click', (e) => {
-    var progressTime = (e.offsetX  /progress.offsetWidth) * video.duration;
-    video.currentTime = progressTime;
-})
 
 //current time & duration
 var currentTime = () => {
@@ -48,4 +32,13 @@ var currentTime = () => {
     durationTimeElememnt.innerHTML = `${durationMinutes}:${durationSeconds}`;
 }
 
-video.addEventListener('timeupdate', currentTime)
+//Set video time to progress
+function setVideoProgress() {
+    video.currentTime = (+progress.value * video.duration) / 100;
+}
+
+//Event Listener
+video.addEventListener('click', togglePlayPause);
+btn.addEventListener('click', togglePlayPause);
+video.addEventListener('timeupdate', updateProgress);
+progress.addEventListener('change', setVideoProgress);
