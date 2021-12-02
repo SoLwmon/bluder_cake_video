@@ -4,8 +4,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-height: 100vh;
-    margin: 0;
+    height: 100vh;
+}
+
+.video-player {
+    width: 60%;
 }
 
 .video {
